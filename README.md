@@ -1,4 +1,9 @@
-# JellyCon
+# JellyCon (Fork)
+
+> **Note**: This is a fork maintained by [linkandzelda91](https://github.com/linkandzelda91). 
+> For installation instructions, see [INSTALLATION.md](INSTALLATION.md).
+>
+> Original project: [jellyfin/jellycon](https://github.com/jellyfin/jellycon)
 
 JellyCon is a lightweight Kodi add-on that lets you browse and play media files directly from your Jellyfin server within the Kodi interface.  It can be thought of as a thin frontend for a Jellyfin server.
 
@@ -6,6 +11,18 @@ JellyCon can be used with Movie, TV Show, Music Video, and Music libraries, in a
 
 
 ## Installation
+
+> **For this fork**: See [INSTALLATION.md](INSTALLATION.md) for detailed installation instructions.
+
+### Quick Installation
+
+1. Download the latest `plugin.video.jellycon+py3.zip` from [Releases](https://github.com/linkandzelda91/jellycon/releases)
+2. In Kodi: **Settings** → **Add-ons** → **Install from zip file**
+3. Select the downloaded zip file
+
+### Original Installation Method (Official Repository)
+
+If you prefer the official version instead of this fork:
 
 #### 1. Adding the Jellyfin repository
 
@@ -18,7 +35,7 @@ https://jellyfin.org/docs/general/clients/kodi.html#install-add-on-repository
 - Choose "Kodi Jellyfin Add-ons", followed by "Video Add-ons"
 - Select the JellyCon add-on and choose install
 
-#### 3. Login
+### Login
 
 - Within a few seconds after the installation you should be prompted for your server details.
 - If a Jellyfin server is detected on your local network, it will displayed in a dialog. Otherwise, you will be prompted to enter the URL of your Jellyfin server

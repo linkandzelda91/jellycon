@@ -1,8 +1,9 @@
-version: '0.8.3'
+version: '0.8.3-fork.1'
 changelog: |-
-  CI & build changes
-  ------------------
-  + Swap legacy secrets for current secrets (#371) @joshuaboniface
+  Fork by linkandzelda91
+  ----------------------
+  + Initial fork release
+  + Updated repository links
 dependencies:
   py2:
     - addon: 'xbmc.python'

@@ -14,10 +14,10 @@
     <platform>all</platform>
     <language>en</language>
     <license>GPL-2.0-only</license>
-    <forum>https://github.com/jellyfin/jellycon/issues</forum>
-    <website>https://github.com/jellyfin/jellycon/wiki</website>
-    <source>https://github.com/jellyfin/jellycon</source>
-    <summary lang="en_GB">Browse and play your Jellyfin server media library.</summary>
+    <forum>https://github.com/linkandzelda91/jellycon/issues</forum>
+    <website>https://github.com/linkandzelda91/jellycon</website>
+    <source>https://github.com/linkandzelda91/jellycon</source>
+    <summary lang="en_GB">Browse and play your Jellyfin server media library. (Fork by linkandzelda91)</summary>
     <description lang="en_GB">An addon to allow you to browse and playback your Jellyfin (https://jellyfin.org) Movie, TV Show and Music collections.</description>
     <assets>
         <icon>icon.png</icon>
