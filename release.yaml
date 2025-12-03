@@ -2,7 +2,7 @@ version: '0.8.3-mpeg2video'
 changelog: |-
   MPEG fixes
   ----------
-  + Changed codec for transcode profile to mpeg2video
+  + Changed pretty much every reference to h264 in the device profile and transcode profile to mpeg2video.
 dependencies:
   py2:
     - addon: 'xbmc.python'
