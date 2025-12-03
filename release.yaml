@@ -1,9 +1,8 @@
-version: '0.8.3-fork.1'
+version: '0.8.3-mpeg4'
 changelog: |-
-  Fork by linkandzelda91
-  ----------------------
-  + Initial fork release
-  + Updated repository links
+  MPEG fixes
+  ----------
+  + Fixed play_utils.py MPEG handling
 dependencies:
   py2:
     - addon: 'xbmc.python'
