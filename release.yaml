@@ -1,8 +1,8 @@
-version: '0.8.3-mpeg4-mp4-fix'
+version: '0.8.3-mpeg2video'
 changelog: |-
   MPEG fixes
   ----------
-  + Fixed play_utils.py MPEG handling
+  + Changed codec for transcode profile to mpeg2video
 dependencies:
   py2:
     - addon: 'xbmc.python'

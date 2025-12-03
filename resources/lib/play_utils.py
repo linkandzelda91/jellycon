@@ -1289,8 +1289,8 @@ def get_play_url(media_source, play_session_id, channel_id=None):
             "DeviceId": device_id,
             "PlaySessionId": play_session_id,
             "api_key": user_token,
-            "SegmentContainer": "mp4",
-            "VideoCodec": "mpeg4",
+            "SegmentContainer": "ts",
+            "VideoCodec": "mpeg2video",
             "VideoBitrate": bitrate,
             "MaxWidth": playback_max_width,
             "AudioCodec": audio_codec,
@@ -1574,7 +1574,7 @@ def get_item_playback_info(item_id, force_transcode):
                 "Protocol": "hls",
                 "Type": "Video",
                 "AudioCodec": audio_codec,
-                "VideoCodec": "h264",
+                "VideoCodec": "mpeg2video",
                 "MaxAudioChannels": audio_max_channels
             },
             {
@@ -1674,7 +1674,7 @@ def get_item_playback_info(item_id, force_transcode):
         profile['CodecProfiles'].append(
             {
                 "Type": "Video",
-                "Codec": "h264",
+                "Codec": "mpeg2video",
                 "Conditions": [
                     {
                         "Condition": "LessThanEqual",
