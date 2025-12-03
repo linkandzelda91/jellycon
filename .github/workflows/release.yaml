@@ -24,18 +24,50 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pyyaml
 
-      - name: Build py3 version (Kodi 19+)
-        run: python build.py --version py3
-
-      - name: Build py2 version (Kodi 18)
-        run: python build.py --version py2
-
       - name: Get version from release.yaml
         id: get_version
         run: |
           VERSION=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['version'])")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Version: $VERSION"
+
+      # Build MPEG2 versions from master branch
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: master-build
+
+      - name: Build master py3 version (MPEG2)
+        run: |
+          cd master-build
+          python build.py --version py3
+          mv plugin.video.jellycon+py3.zip ../plugin.video.jellycon-mpeg2+py3.zip
+
+      - name: Build master py2 version (MPEG2)
+        run: |
+          cd master-build
+          python build.py --version py2
+          mv plugin.video.jellycon+py2.zip ../plugin.video.jellycon-mpeg2+py2.zip
+
+      # Build MPEG4 versions from mpeg4-support branch
+      - name: Checkout mpeg4-support branch
+        uses: actions/checkout@v4
+        with:
+          ref: mpeg4-support
+          path: mpeg4-build
+
+      - name: Build mpeg4 py3 version
+        run: |
+          cd mpeg4-build
+          python build.py --version py3
+          mv plugin.video.jellycon+py3.zip ../plugin.video.jellycon-mpeg4+py3.zip
+
+      - name: Build mpeg4 py2 version
+        run: |
+          cd mpeg4-build
+          python build.py --version py2
+          mv plugin.video.jellycon+py2.zip ../plugin.video.jellycon-mpeg4+py2.zip
 
       - name: Create Release
         id: create_release
@@ -45,15 +77,20 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            plugin.video.jellycon+py3.zip
-            plugin.video.jellycon+py2.zip
-            addon.xml
+            plugin.video.jellycon-mpeg2+py3.zip
+            plugin.video.jellycon-mpeg2+py2.zip
+            plugin.video.jellycon-mpeg4+py3.zip
+            plugin.video.jellycon-mpeg4+py2.zip
           body: |
             ## JellyCon Fork Release ${{ steps.get_version.outputs.version }}
             
             ### Installation Instructions
             
-            1. Download `plugin.video.jellycon+py3.zip` (for Kodi 19 Matrix or later)
+            1. Download the appropriate zip file:
+               - `plugin.video.jellycon-mpeg2+py3.zip` - MPEG2 transcoding for Kodi 19+
+               - `plugin.video.jellycon-mpeg2+py2.zip` - MPEG2 transcoding for Kodi 18
+               - `plugin.video.jellycon-mpeg4+py3.zip` - MPEG4 transcoding for Kodi 19+
+               - `plugin.video.jellycon-mpeg4+py2.zip` - MPEG4 transcoding for Kodi 18
             2. In Kodi, go to **Settings** → **Add-ons** → **Install from zip file**
             3. Select the downloaded zip file
             
