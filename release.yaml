@@ -1,8 +1,8 @@
-version: '0.8.3-mpeg2video'
+version: '0.8.3-mpeg4-mp4'
 changelog: |-
   MPEG fixes
   ----------
-  + Changed pretty much every reference to h264 in the device profile and transcode profile to mpeg2video.
+  + changed from mpeg2 with ts container to mpeg4 with mp4 container.
 dependencies:
   py2:
     - addon: 'xbmc.python'
