@@ -1289,7 +1289,7 @@ def get_play_url(media_source, play_session_id, channel_id=None):
             "DeviceId": device_id,
             "PlaySessionId": play_session_id,
             "api_key": user_token,
-            "SegmentContainer": "ts",
+            "SegmentContainer": "mp4",
             "VideoCodec": "mpeg4",
             "VideoBitrate": bitrate,
             "MaxWidth": playback_max_width,
